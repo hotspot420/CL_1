@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #0c0c0c;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/*header section*/
+/* General reset and full width for hero */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hero Area Styles */
+.hero_area {
+    position: relative;
+    height: 400px; /* Adjust as needed */
+    background-color: black; /* Black background */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+.hero_area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("tiles4.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(10px); /* Adjust blur intensity as needed */
+    opacity: 0.7; /* Optional: Adjust opacity to make the image blend more seamlessly */
+    z-index: 1; /* Layer below content */
+}
+
+.hero_area::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle, 
+        rgba(0, 0, 0, 0) 60%, /* Transparent center */
+        rgba(0, 0, 0, 0.9) 100% /* Fades to black at edges */
+    );
+    z-index: 2; /* Layer above blurred image but below text */
+}
+
+.hero_content {
+    position: relative;
+    z-index: 3; /* Ensure content is above the blurred background and gradient */
+    color: #ffffff;
+}
+
+.hero_content h1 {
+    font-size: 4rem; /* Adjust as needed */
+    line-height: 1.2;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Strong drop shadow */
+    margin: 0;
+}
+
+.hero_content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.hero_content .btn {
+    padding: 10px 20px;
+    background-color: #00bbf0;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.hero_content .btn:hover {
+    background-color: #007fa4;
+}
+
